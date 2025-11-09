@@ -11,8 +11,8 @@ import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Cart
 const RealEstateCRM = () => {
   
   const [currentView, setCurrentView] = useState('dashboard');
-  setIsAuthenticated(false);
-  setCurrentUser({ name: '', email: '', role: '' }); 
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [currentUser, setCurrentUser] = useState({ name: 'Agent Demo', email: 'agent@realestate.com', role: 'Agent' });
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
   
   // Sample data - in production, this would come from RDS via API Gateway
@@ -44,7 +44,7 @@ const RealEstateCRM = () => {
   const [modalType, setModalType] = useState('');
   const handleLogout = () => {
     setIsAuthenticated(false);
-    setCurrentUser(null);
+    setCurrentUser({ name: '', email: '', role: '' });
     setLoginForm({ email: '', password: '' });
   };
 
