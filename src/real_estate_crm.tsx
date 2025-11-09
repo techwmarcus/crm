@@ -11,8 +11,8 @@ import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Cart
 const RealEstateCRM = () => {
   
   const [currentView, setCurrentView] = useState('dashboard');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [currentUser, setCurrentUser] = useState<User | null>(null); 
+  setIsAuthenticated(false);
+  setCurrentUser({ name: '', email: '', role: '' }); 
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
   
   // Sample data - in production, this would come from RDS via API Gateway
